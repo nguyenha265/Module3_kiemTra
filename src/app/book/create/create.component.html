@@ -1,0 +1,41 @@
+<h3>Thêm Sách mới</h3>
+<div *ngIf="message">
+  <p style="color: red">{{ message }}</p>
+</div>
+<form #bookForm="ngForm" (ngSubmit)="createBook(bookForm)">
+  <table class="table table-bordered">
+    <tr>
+      <th class="form-group">
+        <label>Title:</label>
+      </th>
+      <td>
+        <label>
+          <input type="text" name="title" ngModel class="form-control"/>
+        </label>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="form-group">
+        <label>Author:</label>
+      </th>
+      <td>
+        <label>
+          <input type="text" name="author" ngModel class="form-control"/>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <th class="form-group">
+        <label>Description:</label>
+      </th>
+      <td><label>
+        <textarea type="text" name="description" ngModel class="form-control"></textarea>
+      </label>
+      </td>
+    </tr>
+  </table>
+  <div>
+    <button type="submit" class="btn btn-success" style="margin-left: 450px">Thêm sách</button>
+  </div>
+</form>
